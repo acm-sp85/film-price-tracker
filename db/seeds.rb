@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+
+require 'csv'
+
+puts "Seeding data from CSV..."
+
+CSV.foreach(Rails.root.join('lib/seed_csv/film_prices.csv'), headers: true) do |row|
+  Film.create( {
+    name: row["NAME"], 
+    price: row["PRICE"],
+    image: row["IMAGE"], 
+    details: row["DETAILS"],
+    stock: row["STOCK"]
+  } ) 
+end
