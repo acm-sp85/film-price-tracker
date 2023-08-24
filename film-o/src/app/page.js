@@ -11,7 +11,7 @@ export default function Home() {
     fetch('http://localhost:3000/films')
       .then((response) => response.json())
       .then((data) => setFilms(data));
-  }, [films]);
+  }, []);
 
   return (
     <main className={styles.main}>
