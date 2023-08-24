@@ -17,7 +17,14 @@ export default function Home() {
     <main className={styles.main}>
       Film-O
       {films.map((film) => (
-        <p>{film.name}</p>
+        <>
+          <p>{film.name}</p>
+          <p>{film.stock}</p>
+          <p>{film.price}</p>
+          <p>{film.details}</p>
+
+          <img src={film.image}></img>
+        </>
       ))}
     </main>
   );
